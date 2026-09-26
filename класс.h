@@ -4,30 +4,31 @@
 #include <iostream>
 #include <string>
 
+using namespace std;
+
 class Student {
 private:
-    std::string name;
-    std::string group;
+    string name;
+    string group;
     int age;
     int* grades;
-    int gradesCount;
+    int count;
 
 public:
     Student();
-    Student(const std::string& name, const std::string& group, int age, const int* gradesArray, int count);
+    Student(string name, string group, int age, int* arr, int count);
     Student(const Student& other);
     ~Student();
 
-    std::string getName() const;
-    std::string getGroup() const;
+    string getName() const;
+    string getGroup() const;
     int getAge() const;
-    int getGradesCount() const;
-    void printGrades() const;
 
-    void setName(const std::string& name);
-    void setGroup(const std::string& group);
+    void setName(string name);
+    void setGroup(string group);
     void setAge(int age);
-    void setGrades(const int* gradesArray, int count);
+
+    void print() const;
 
     Student& operator=(const Student& other);
     bool operator==(const Student& other) const;
